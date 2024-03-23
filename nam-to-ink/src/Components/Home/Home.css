@@ -1,0 +1,31 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(78, 42, 22, 0.7), rgba(78, 42, 22, 0.7)),
+    url("../../assets/home.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-text {
+  text-align: center;
+  max-width: 800px;
+}
+
+.home-text h1 {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #f8f0e8;
+}
+
+.home-text p {
+  font-weight: 200;
+  font-size: 22px;
+  color: #f8f0e8;
+  margin: 10px auto 30px;
+}
