@@ -14,7 +14,7 @@ const App = () => {
       <About />
       <Title title="MY WORK" />
       <Portfolio />
-      <Title title="CONTACT ME" />
+      <Title title="CONTACT ME" titleBackground="#f8f0e8" />
       <Contact />
     </div>
   );
