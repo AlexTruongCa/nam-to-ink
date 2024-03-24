@@ -12,6 +12,7 @@ import photo_9 from "../../assets/photo_9.png";
 import photo_10 from "../../assets/photo_10.png";
 import photo_11 from "../../assets/photo_11.png";
 import photo_12 from "../../assets/photo_12.png";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Portfolio = () => {
   return (
@@ -55,7 +56,9 @@ const Portfolio = () => {
           <img src={photo_12} alt="" />
         </div>
       </div>
-      <div className=""></div>
+      <div className="instagram-icon">
+        <InstagramIcon sx={{ fontSize: 50 }} />
+      </div>
     </div>
   );
 };
