@@ -8,10 +8,31 @@
 }
 
 body {
-  background: #f8f0e8;
+  /* background: #f8f0e8; */
 }
 
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+  color: #c4864b;
+}
 .container {
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.btn {
+  width: 120px;
+  font-size: 15px;
+  background: #f8f0e8;
+  border: 0;
+  outline: 0;
+  padding: 15px 4px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn:hover {
+  background: #c4864b;
+  color: #f8f0e8;
 }
