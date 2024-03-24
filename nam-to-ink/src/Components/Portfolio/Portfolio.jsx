@@ -57,7 +57,7 @@ const Portfolio = () => {
         </div>
       </div>
       <div className="instagram-icon">
-        <InstagramIcon sx={{ fontSize: 50 }} />
+        <InstagramIcon sx={{ fontSize: 50, color: "#cf9e6e" }} />
       </div>
     </div>
   );

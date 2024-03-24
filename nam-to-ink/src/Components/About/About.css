@@ -21,14 +21,9 @@
   border-radius: 30px;
 }
 
-/* .about-right h2 {
-  font-size: 30px;
-  font-weight: 400;
-  color: #c4864b;
-} */
-
 .about-right p {
   font-size: 18px;
   margin: 20px 0;
   max-width: 800px;
+  line-height: 1.4;
 }
