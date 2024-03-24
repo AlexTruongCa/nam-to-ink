@@ -17,7 +17,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 const Portfolio = () => {
   return (
     <div className="portfolio">
-      <h2>MY WORK</h2>
       <div className="gallery">
         <div className="photo">
           <img src={photo_1} alt="" />

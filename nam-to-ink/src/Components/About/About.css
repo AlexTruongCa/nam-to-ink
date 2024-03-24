@@ -27,3 +27,9 @@
   max-width: 800px;
   line-height: 1.4;
 }
+
+.about-right h2 {
+  font-size: 35px;
+  font-weight: 400;
+  color: #c4864b;
+}
