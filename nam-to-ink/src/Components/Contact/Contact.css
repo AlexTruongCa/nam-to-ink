@@ -1,0 +1,27 @@
+/* .contact-me {
+  background: #f8f0e8;
+  margin: 0px auto;
+  max-width: 90%;
+  display: flex;
+  align-items: first baseline;
+  justify-content: space-between;
+  padding: 0 12% 50px 12%;
+}
+
+.contact-column {
+  flex-basis: 40%;
+}
+
+.contact-column h3,
+.booking-column h3 {
+  margin-bottom: 15px;
+}
+
+.booking-column form input,
+.booking-column form textarea {
+  flex-basis: 55%;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 5px;
+} */
