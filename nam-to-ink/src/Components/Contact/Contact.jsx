@@ -53,6 +53,8 @@ const Contact = () => {
             rows="10"
             placeholder="give me more details of your idea"
           ></textarea>
+          <input type="file" />
+          <button className="btn-dark">SUBMIT</button>
         </form>
       </div>
     </div>

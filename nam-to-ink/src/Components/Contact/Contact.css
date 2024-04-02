@@ -1,11 +1,11 @@
 .contact-me {
-  /* background: #f8f0e8; */
-  margin: 0px auto;
-  max-width: 90%;
+  background: #f8f0e8;
+  margin: 0px 0;
+  max-width: 100%;
   display: flex;
   align-items: first baseline;
   justify-content: space-between;
-  padding: 0 12% 50px 12%;
+  padding: 0 18% 50px 18%;
 }
 
 .contact-column {
@@ -28,10 +28,11 @@
 
 .contact-column form input,
 .contact-column form textarea {
-  /* flex-basis: 55%; */
   display: flex;
   margin-top: 5px;
   margin-bottom: 15px;
   padding: 5px;
   width: 450px;
+  border: 0 solid;
+  font-style: italic;
 }
