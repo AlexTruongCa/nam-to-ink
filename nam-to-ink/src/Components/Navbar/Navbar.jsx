@@ -9,7 +9,7 @@ const Navbar = () => {
     window.addEventListener("scroll", () => {
       window.scrollY > 200 ? setSticky(true) : setSticky(false);
     });
-  });
+  }, []);
 
   return (
     <nav className={`container ${sticky ? "dark-nav" : ""}`}>
