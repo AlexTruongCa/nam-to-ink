@@ -10,9 +10,9 @@ import Info from "./Components/Info/Info";
 import Form from "./Components/Form/Form";
 import Photo from "./Components/Photo/Photo";
 import Photobig from "./Components/Photobig/Photobig";
-import photo_1 from "../../assets/photo_1.png";
-import photo_4 from "../../assets/photo_4.png";
-import photo_5 from "../../assets/photo_5.png";
+import photo_1 from "./assets/photo_1.png";
+import photo_4 from "./assets/photo_4.png";
+import photo_5 from "./assets/photo_5.png";
 
 const App = () => {
   return (
@@ -22,18 +22,18 @@ const App = () => {
       <About />
       <Title title="MY WORK" />
       <Portfolio>
-        <Photo src={photo_1} />
-        <Photo src={photo_1} />
-        <Photo src={photo_1} />
+        <Photo className="photo" src={photo_1} />
+        <Photo className="photo" src={photo_1} />
+        <Photo className="photo" src={photo_1} />
         <Photobig className="photo-big-1" src={photo_4} />
         <Photobig className="photo-big-2" src={photo_5} />
-        <Photo src={photo_1} />
-        <Photo src={photo_1} />
-        <Photo src={photo_1} />
-        <Photo src={photo_1} />
-        <Photo src={photo_1} />
-        <Photo src={photo_1} />
-        <Photo src={photo_1} />
+        <Photo className="photo" src={photo_1} />
+        <Photo className="photo" src={photo_1} />
+        <Photo className="photo" src={photo_1} />
+        <Photo className="photo" src={photo_1} />
+        <Photo className="photo" src={photo_1} />
+        <Photo className="photo" src={photo_1} />
+        <Photo className="photo" src={photo_1} />
       </Portfolio>
       <Title title="CONTACT ME" titleBackground="#f8f0e8" />
       <Contact>
