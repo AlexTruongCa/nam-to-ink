@@ -19,15 +19,14 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://graph.instagram.com/me/media?fields=id,media_type,caption,media_url,permalink)`,
+          `http://localhost:3000/`,
           {
-            method: "GET",
-            headers: {
-              Authorization:
-                "Bearer IGQWRQV01nMUJLaG82ZAkR3TGJwWUpJMUVsc043ZAkVuTVU0QTlDazVrSXFIT1BtLUtHQXNsOGc1bnhvRFVmRFRNNVlIT3RLb1ZAacUNwdkNXT0NfbjBOTXZA3WTZAMN244SVNnLVdCdzFRaXBVVUFhaldaRnQ3RW1LT0UZD",
-            },
+            method: "GET"
           }
         );
+
+        console.log('---response---', response)
+
         if (!response.ok) {
           throw new Error("Could not fetch resources");
         }
