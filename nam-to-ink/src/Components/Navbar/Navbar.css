@@ -22,10 +22,23 @@ nav ul li {
   font-size: 20px;
   color: #f8f0e8;
   padding: 35px 0;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+nav ul li:hover {
+  color: #cf9e6e;
 }
 
 .dark-nav {
   background: #cf9e6e;
-  transition: 0.2s;
+  transition: 0.2s ease-in-out;
   box-shadow: 0 1px 5px 0.5px rgba(0, 0, 0, 0.2);
+}
+
+.dark-nav ul li {
+  transition: 0.2s ease-in-out;
+}
+.dark-nav ul li:hover {
+  color: #010000;
 }
