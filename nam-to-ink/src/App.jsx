@@ -15,11 +15,19 @@ import Photo from "./Components/Photo/Photo";
 const App = () => {
   const [instagramPhoto, setInstagramPhoto] = useState([]);
   useEffect(() => {
+    console.log("one");
     const fetchData = async () => {
-      const url = `https://graph.instagram.com/me/media?fields=id,media_type,caption,media_url,permalink,timestamp&access_token=IGQWRQV01nMUJLaG82ZAkR3TGJwWUpJMUVsc043ZAkVuTVU0QTlDazVrSXFIT1BtLUtHQXNsOGc1bnhvRFVmRFRNNVlIT3RLb1ZAacUNwdkNXT0NfbjBOTXZA3WTZAMN244SVNnLVdCdzFRaXBVVUFhaldaRnQ3RW1LT0UZD
-      `;
       try {
-        const response = await fetch(url);
+        const response = await fetch(
+          `https://graph.instagram.com/me/media?fields=id,media_type,caption,media_url,permalink)`,
+          {
+            method: "GET",
+            headers: {
+              Authorization:
+                "Bearer IGQWRQV01nMUJLaG82ZAkR3TGJwWUpJMUVsc043ZAkVuTVU0QTlDazVrSXFIT1BtLUtHQXNsOGc1bnhvRFVmRFRNNVlIT3RLb1ZAacUNwdkNXT0NfbjBOTXZA3WTZAMN244SVNnLVdCdzFRaXBVVUFhaldaRnQ3RW1LT0UZD",
+            },
+          }
+        );
         if (!response.ok) {
           throw new Error("Could not fetch resources");
         }
@@ -36,13 +44,12 @@ const App = () => {
         }
         console.log(instagramPhoto);
         setInstagramPhoto(filteredPhotos);
-        // renderPhotos();
       } catch (error) {
         console.error("Could not fetch error", error);
       }
     };
     fetchData();
-  });
+  }, []);
 
   const renderPhotos = () => {
     return instagramPhoto.map((dataArr, index) => {
@@ -76,121 +83,3 @@ const App = () => {
 };
 
 export default App;
-
-// {
-//   dataMock.map((photoObject, index) => {
-//     let className;
-//     if (index === 3) {
-//       className = "photo-big-1";
-//     } else if (index === 4) {
-//       className = "photo-big-2";
-//     } else className = "photo";
-//     return (
-//       <Photo
-//         className={className}
-//         src={photoObject.media_url}
-//         key={photoObject.id}
-//       />
-//     );
-//   });
-// }
-
-// const dataMock = [
-//   {
-//     id: "17895695668004550",
-//     media_type: "IMAGE",
-//     media_url: photo_1,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004551",
-//     media_type: "IMAGE",
-//     media_url: photo_1,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004552",
-//     media_type: "IMAGE",
-//     media_url: photo_3,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004553",
-//     media_type: "IMAGE",
-//     media_url: photo_4,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004554",
-//     media_type: "IMAGE",
-//     media_url: photo_5,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004559",
-//     media_type: "IMAGE",
-//     media_url: photo_5,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004557",
-//     media_type: "IMAGE",
-//     media_url: photo_5,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004558",
-//     media_type: "IMAGE",
-//     media_url: photo_5,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004512",
-//     media_type: "IMAGE",
-//     media_url: photo_5,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004515",
-//     media_type: "IMAGE",
-//     media_url: photo_5,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004565",
-//     media_type: "IMAGE",
-//     media_url: photo_5,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-//   {
-//     id: "17895695668004523",
-//     media_type: "IMAGE",
-//     media_url: photo_5,
-//     username: "jayposiris",
-//     timestamp: "2017-08-31T18:10:00+0000",
-//   },
-// ];
-
-/* <Photo className="photo" src={photo_1} />
-          <Photo className="photo" src={photo_1} />
-          <Photo className="photo" src={photo_1} />
-          <Photobig className="photo-big-1" src={photo_4} />
-          <Photobig className="photo-big-2" src={photo_5} />
-          <Photo className="photo" src={photo_1} />
-          <Photo className="photo" src={photo_1} />
-          <Photo className="photo" src={photo_1} />
-          <Photo className="photo" src={photo_1} />
-          <Photo className="photo" src={photo_1} />
-          <Photo className="photo" src={photo_1} />
-          <Photo className="photo" src={photo_1} /> */
