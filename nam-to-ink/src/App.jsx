@@ -23,8 +23,7 @@ const App = () => {
           {
             method: "GET",
             headers: {
-              Authorization:
-                "Bearer IGQWRQV01nMUJLaG82ZAkR3TGJwWUpJMUVsc043ZAkVuTVU0QTlDazVrSXFIT1BtLUtHQXNsOGc1bnhvRFVmRFRNNVlIT3RLb1ZAacUNwdkNXT0NfbjBOTXZA3WTZAMN244SVNnLVdCdzFRaXBVVUFhaldaRnQ3RW1LT0UZD",
+              Authorization: "Bearer {Your-token-here}",
             },
           }
         );
