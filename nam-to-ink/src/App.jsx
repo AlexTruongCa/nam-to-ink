@@ -15,7 +15,7 @@ import Photo from "./Components/Photo/Photo";
 const App = () => {
   const [instagramPhoto, setInstagramPhoto] = useState([]);
   useEffect(() => {
-    console.log("one");
+    // console.log("one");
     const fetchData = async () => {
       try {
         const response = await fetch(`http://localhost:3000/`, {
@@ -45,7 +45,7 @@ const App = () => {
             filteredPhotos.push(mostRecentPhoto[i]);
           }
         }
-        console.log(instagramPhoto);
+        console.log(filteredPhotos);
         setInstagramPhoto(filteredPhotos);
       } catch (error) {
         console.error("Could not fetch error", error);

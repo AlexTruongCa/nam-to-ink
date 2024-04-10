@@ -3,7 +3,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="home" id="section-home">
       <div className="home-text">
         <h1>
           WE TRANSFORM YOUR TATTOO INTO MEMORIES THAT SPEAK LOUDER THAN WORDS
