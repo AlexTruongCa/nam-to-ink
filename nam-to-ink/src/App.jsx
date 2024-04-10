@@ -18,28 +18,31 @@ const App = () => {
     console.log("one");
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `https://graph.instagram.com/me/media?fields=id,media_type,caption,media_url,permalink)`,
-          {
-            method: "GET",
-            headers: {
-              Authorization:
-                "Bearer IGQWRQV01nMUJLaG82ZAkR3TGJwWUpJMUVsc043ZAkVuTVU0QTlDazVrSXFIT1BtLUtHQXNsOGc1bnhvRFVmRFRNNVlIT3RLb1ZAacUNwdkNXT0NfbjBOTXZA3WTZAMN244SVNnLVdCdzFRaXBVVUFhaldaRnQ3RW1LT0UZD",
-            },
-          }
-        );
+        const response = await fetch(`http://localhost:3000/`, {
+          method: "GET",
+        });
+        console.log("---response---", response);
         if (!response.ok) {
           throw new Error("Could not fetch resources");
         }
         const dataObj = await response.json();
         const dataArr = dataObj.data;
+
+        //sort dataArr in descending order
+        dataArr.sort((a, b) => {
+          return new Date(b.timestamp) - new Date(a.timestamp);
+        });
+
+        //select most recent photos (12)
+        const mostRecentPhoto = dataArr.slice(0, 12);
+
         const keyWord = "#testAPi";
         const filteredPhotos = [];
-        for (let i = 0; i < dataArr.length; i++) {
-          const mediaType = dataArr[i].media_type;
-          const caption = dataArr[i].caption;
-          if (mediaType !== "VIDEO" && caption.indexOf(keyWord) !== -1) {
-            filteredPhotos.push(dataArr[i]);
+        for (let i = 0; i < mostRecentPhoto.length; i++) {
+          const mediaType = mostRecentPhoto[i].media_type;
+          const caption = mostRecentPhoto[i].caption;
+          if (mediaType !== "VIDEO" && caption.indexOf(keyWord) === -1) {
+            filteredPhotos.push(mostRecentPhoto[i]);
           }
         }
         console.log(instagramPhoto);
