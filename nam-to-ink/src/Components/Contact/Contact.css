@@ -3,7 +3,8 @@
   margin: 0px 0;
   max-width: 100%;
   display: flex;
-  align-items: first baseline;
+  /* align-items: first baseline; */
   justify-content: space-between;
   padding: 0 18% 50px 18%;
+  gap: 20px;
 }

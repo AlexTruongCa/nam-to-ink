@@ -13,6 +13,17 @@ const Navbar = () => {
     });
   }, []);
 
+  const scrollWithOffSet = (a) => {
+    const yCordinate = a.getBoundingClientRect().top + scrollY;
+    //getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
+    //scrollY property returns the pixels a document has scrolled from the upper left corner of the window.
+    const yOffset = -200;
+    window.scrollTo({
+      top: yCordinate + yOffset,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <BrowserRouter>
       <nav className={`container ${sticky ? "dark-nav" : ""}`}>
@@ -24,17 +35,29 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className="link" to="/#section-about" smooth>
+            <Link
+              className="link"
+              to="/#section-about"
+              scroll={scrollWithOffSet}
+            >
               ABOUT ME
             </Link>
           </li>
           <li>
-            <Link className="link" to="/#section-portfolio" smooth>
+            <Link
+              className="link"
+              to="/#section-portfolio"
+              scroll={scrollWithOffSet}
+            >
               MY WORK
             </Link>
           </li>
           <li>
-            <Link className="link" to="/#section-contact" smooth>
+            <Link
+              className="link"
+              to="/#section-contact"
+              scroll={scrollWithOffSet}
+            >
               CONTACT
             </Link>
           </li>
