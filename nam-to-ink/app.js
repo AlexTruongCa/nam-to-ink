@@ -1,6 +1,11 @@
+import dotenv from "dotenv";
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
+dotenv.config();
+
+// create a mini express server to call API
+
 const app = express();
 const port = 3000;
 const url1 =
@@ -12,13 +17,13 @@ app.get("/", async (req, res) => {
   const response = await fetch(url1, {
     method: "GET",
     headers: {
-      Authorization:
-        "Bearer IGQWRQV01nMUJLaG82ZAkR3TGJwWUpJMUVsc043ZAkVuTVU0QTlDazVrSXFIT1BtLUtHQXNsOGc1bnhvRFVmRFRNNVlIT3RLb1ZAacUNwdkNXT0NfbjBOTXZA3WTZAMN244SVNnLVdCdzFRaXBVVUFhaldaRnQ3RW1LT0UZD",
+      Authorization: `Bearer ${process.env.INSTAGRAM_TOKEN}`,
     },
   });
   const apiResponseJson = await response.json();
   res.send(apiResponseJson);
 });
+console.log(process.env.INSTAGRAM_TOKEN);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

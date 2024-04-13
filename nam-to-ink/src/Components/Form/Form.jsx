@@ -4,16 +4,16 @@ import { useForm } from "react-hook-form";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const Form = () => {
-  const { handleSubmit, setValue } = useForm();
+  // const { handleSubmit, setValue } = useForm();
 
-  const onHCaptchaChange = (token) => {
-    setValue("h-captcha-response", token);
-  };
+  // const onHCaptchaChange = (token) => {
+  //   setValue("h-captcha-response", token);
+  // };
 
   const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     setResult("Sending....");
     const formData = new FormData(event.target);
 
@@ -38,7 +38,7 @@ const Form = () => {
   return (
     <div className="contact-column">
       <h3>To start the booking process, please fill in this form</h3>
-      <form action="" onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={onSubmit}>
         <label>Your Name</label>
         <input
           className="your-name"
@@ -73,10 +73,10 @@ const Form = () => {
         ></textarea>
         {/* <input type="file" />
         <br /> */}
-        <HCaptcha
+        {/* <HCaptcha
           sitekey="10000000-ffff-ffff-ffff-000000000001" //this site key is for testing only. Use this key on prod 50b2fe65-b00b-4b9e-ad62-3ba471098be2
           onVerify={onHCaptchaChange}
-        />
+        /> */}
         <button className="btn-dark" type="submit" style={{ marginBottom: 15 }}>
           SUBMIT
         </button>
