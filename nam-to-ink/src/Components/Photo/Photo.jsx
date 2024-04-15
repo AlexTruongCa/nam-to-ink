@@ -1,9 +1,16 @@
 import React from "react";
 
-const Photo = ({ className, src }) => {
+const Photo = ({ className, src, expandModal }) => {
   return (
     <div className={className}>
-      <img src={src} alt="alt" />
+      <img
+        id="image"
+        src={src}
+        alt="alt"
+        onClick={() => {
+          expandModal(true);
+        }}
+      />
     </div>
   );
 };

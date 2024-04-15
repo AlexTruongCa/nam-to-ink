@@ -6,6 +6,7 @@ import Portfolio from "./Components/Portfolio/Portfolio";
 import Contact from "./Components/Contact/Contact";
 import Title from "./Components/Title/Title";
 import Footer from "./Components/Footer/Footer";
+import Modal from "./Components/Modal/Modal";
 import Info from "./Components/Info/Info";
 import Form from "./Components/Form/Form";
 import Photo from "./Components/Photo/Photo";
@@ -14,6 +15,8 @@ import Photo from "./Components/Photo/Photo";
 
 const App = () => {
   const [instagramPhoto, setInstagramPhoto] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
+
   useEffect(() => {
     // console.log("one");
     const fetchData = async () => {
@@ -29,33 +32,35 @@ const App = () => {
         const dataArr = dataObj.data;
 
         //sort dataArr in descending order
-        dataArr.sort((a, b) => {
+        const dataSort = dataArr.sort((a, b) => {
           return new Date(b.timestamp) - new Date(a.timestamp);
         });
 
-        //select most recent photos (12)
-        const mostRecentPhoto = dataArr.slice(0, 12);
-
         const keyWord = "#testAPi";
         const filteredPhotos = [];
-        for (let i = 0; i < mostRecentPhoto.length; i++) {
-          const mediaType = mostRecentPhoto[i].media_type;
-          const caption = mostRecentPhoto[i].caption;
+
+        for (let i = 0; i < dataSort.length; i++) {
+          const mediaType = dataSort[i].media_type;
+          const caption = dataSort[i].caption;
           if (mediaType !== "VIDEO" && caption.indexOf(keyWord) === -1) {
-            filteredPhotos.push(mostRecentPhoto[i]);
+            filteredPhotos.push(dataSort[i]);
           }
         }
-        console.log(filteredPhotos);
-        setInstagramPhoto(filteredPhotos);
+
+        //pick the 12 most recent photos
+        const dataSlice = filteredPhotos.slice(0, 12);
+        setInstagramPhoto(dataSlice);
       } catch (error) {
         console.error("Could not fetch error", error);
       }
     };
+
     fetchData();
   }, []);
 
   const renderPhotos = () => {
     return instagramPhoto.map((dataArr, index) => {
+      const mediaURL = dataArr.media_url;
       let className;
       if (index === 3) {
         className = "photo-big-1";
@@ -63,7 +68,12 @@ const App = () => {
         className = "photo-big-2";
       } else className = "photo";
       return (
-        <Photo className={className} src={dataArr.media_url} key={dataArr.id} />
+        <Photo
+          className={className}
+          src={mediaURL}
+          key={dataArr.id}
+          expandModal={setOpenModal}
+        />
       );
     });
   };
@@ -80,6 +90,17 @@ const App = () => {
         <Info />
         <Form />
       </Contact>
+
+      {/* <button
+        onClick={() => {
+          setOpenModal(true);
+        }}
+      >
+        Open
+      </button> */}
+
+      {openModal && <Modal closeModal={setOpenModal} />}
+
       <Footer />
     </div>
   );

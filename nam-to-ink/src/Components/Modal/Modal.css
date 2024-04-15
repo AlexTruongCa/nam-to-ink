@@ -1,0 +1,58 @@
+.modalContainer {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(200, 200, 200, 0.9);
+  display: flex;
+  top: 0;
+  left: 0;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  /* border: 2px dotted yellow; */
+}
+
+.modalWrapper {
+  /* border: 5px solid blue; */
+  display: flex;
+  object-fit: cover;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.modalRight {
+  background: white;
+  width: 400px;
+}
+
+.modalWrapper .modalLeft {
+  /* border: 5px solid purple; */
+  margin: 0;
+}
+
+.modalWrapper .modalLeft > img {
+  width: 100%;
+  display: block;
+}
+
+.userInfo {
+  /* border: 5px solid red; */
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 0 20px;
+}
+
+.userInfo .profilePhoto {
+  width: 50px;
+  border-radius: 50px;
+}
+
+.userInfo .userName {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.photoCaption {
+  /* border: 5px solid pink; */
+  padding: 20px 20px 0 20px;
+}
