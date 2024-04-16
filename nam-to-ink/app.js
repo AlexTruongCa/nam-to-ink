@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 const port = 3000;
 const url1 =
-  "https://graph.instagram.com/me/media?fields=id,media_type,caption,media_url,permalink";
+  "https://graph.instagram.com/me/media?fields=id,username,media_type,caption,media_url,permalink";
 
 app.use(cors());
 

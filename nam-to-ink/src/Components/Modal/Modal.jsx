@@ -4,16 +4,16 @@ import "./Modal.css";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ClearIcon from "@mui/icons-material/Clear";
-import Photo1 from "../../assets/photo_1.png";
-import Photo2 from "../../assets/photo_4.png";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
-const Modal = ({ openModal, src }) => {
+const Modal = ({ openModal, src, caption, username, userLink }) => {
+  const handleClick = () => {
+    openModal(false);
+  };
   return (
     <div className="modalContainer">
       <ClearIcon
-        onClick={() => {
-          openModal(false);
-        }}
+        onClick={handleClick}
         style={{
           position: "fixed",
           top: "0",
@@ -30,17 +30,29 @@ const Modal = ({ openModal, src }) => {
 
         <div className="modalRight">
           <div className="userInfo">
-            <img className="profilePhoto" src={Photo2} alt="" />
-            <p className="userName">13ink.tattoo</p>
+            <a
+              href={userLink}
+              target="_blank"
+              style={{ textDecoration: "none", color: "#c4864b" }}
+            >
+              <InstagramIcon style={{ fontSize: "30" }} />
+            </a>
+            <a
+              href={userLink}
+              target="_blank"
+              style={{ textDecoration: "none", color: "#c4864b" }}
+            >
+              <p className="userName">{username}</p>
+            </a>
           </div>
-          <div className="photoCaption">
-            This is the description of the photo which is also the description
-            on user's Instagram account.
-          </div>
+          <div className="photoCaption">{caption}</div>
         </div>
       </div>
       <ArrowForwardIosIcon style={{ fontSize: "40" }} />
     </div>
+
+    // <div className="modalBackground">
+    // </div>
     // document.getElementById("portal")
   );
 };

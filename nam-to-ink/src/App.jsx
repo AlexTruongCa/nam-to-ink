@@ -17,6 +17,9 @@ const App = () => {
   const [instagramPhoto, setInstagramPhoto] = useState([]);
   const [isModal, setIsModal] = useState(false);
   const [selectedPhotoSrc, setSelectedPhotoSrc] = useState("");
+  const [isCaption, setIsCaption] = useState("");
+  const [isUsername, setIsUsername] = useState("");
+  const [isPermalink, setIsPermalink] = useState("");
 
   useEffect(() => {
     // console.log("one");
@@ -62,6 +65,10 @@ const App = () => {
   const renderPhotos = () => {
     return instagramPhoto.map((dataArr, index) => {
       const mediaURL = dataArr.media_url;
+      const mediaCaption = dataArr.caption;
+      const mediaUsername = dataArr.username;
+      const mediaUserlink = dataArr.permalink;
+      // console.log(mediaUsername);
       let className;
       if (index === 3) {
         className = "photo-big-1";
@@ -76,6 +83,9 @@ const App = () => {
           openModal={() => {
             setIsModal(true);
             setSelectedPhotoSrc(mediaURL);
+            setIsCaption(mediaCaption);
+            setIsUsername(mediaUsername);
+            setIsPermalink(mediaUserlink);
           }}
         />
       );
@@ -103,7 +113,15 @@ const App = () => {
         Open
       </button> */}
 
-      {isModal && <Modal openModal={setIsModal} src={selectedPhotoSrc} />}
+      {isModal && (
+        <Modal
+          openModal={setIsModal}
+          src={selectedPhotoSrc}
+          caption={isCaption}
+          username={isUsername}
+          userLink={isPermalink}
+        />
+      )}
 
       <Footer />
     </div>

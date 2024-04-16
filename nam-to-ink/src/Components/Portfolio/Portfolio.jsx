@@ -1,6 +1,5 @@
 import React from "react";
 import "./Portfolio.css";
-import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Portfolio = ({ children }) => {
   return (
