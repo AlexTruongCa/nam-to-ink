@@ -15,7 +15,8 @@ import Photo from "./Components/Photo/Photo";
 
 const App = () => {
   const [instagramPhoto, setInstagramPhoto] = useState([]);
-  const [openModal, setOpenModal] = useState(false);
+  const [isModal, setIsModal] = useState(false);
+  const [selectedPhotoSrc, setSelectedPhotoSrc] = useState("");
 
   useEffect(() => {
     // console.log("one");
@@ -72,7 +73,10 @@ const App = () => {
           className={className}
           src={mediaURL}
           key={dataArr.id}
-          expandModal={setOpenModal}
+          openModal={() => {
+            setIsModal(true);
+            setSelectedPhotoSrc(mediaURL);
+          }}
         />
       );
     });
@@ -99,7 +103,7 @@ const App = () => {
         Open
       </button> */}
 
-      {openModal && <Modal closeModal={setOpenModal} />}
+      {isModal && <Modal openModal={setIsModal} src={selectedPhotoSrc} />}
 
       <Footer />
     </div>

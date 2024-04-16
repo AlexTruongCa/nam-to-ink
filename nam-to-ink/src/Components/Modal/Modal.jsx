@@ -7,12 +7,12 @@ import ClearIcon from "@mui/icons-material/Clear";
 import Photo1 from "../../assets/photo_1.png";
 import Photo2 from "../../assets/photo_4.png";
 
-const Modal = ({ closeModal }) => {
+const Modal = ({ openModal, src }) => {
   return (
     <div className="modalContainer">
       <ClearIcon
         onClick={() => {
-          closeModal(false);
+          openModal(false);
         }}
         style={{
           position: "fixed",
@@ -25,7 +25,7 @@ const Modal = ({ closeModal }) => {
       <ArrowBackIosNewIcon style={{ fontSize: "40" }} />
       <div className="modalWrapper">
         <div className="modalLeft">
-          <img src={Photo2} alt="" />
+          <img src={src} alt="" />
         </div>
 
         <div className="modalRight">
