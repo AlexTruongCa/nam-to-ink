@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ImageSlider.css";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const ImageSlider = ({ imageUrls }) => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -45,16 +46,64 @@ const ImageSlider = ({ imageUrls }) => {
     );
   };
   return (
-    <div
-      style={{
-        maxWidth: "300px",
-        width: "100%",
-        aspectRatio: " 1 / 1",
-        margin: "0 auto",
-      }}
-    >
-      <div style={{ width: "100%", height: "100%", position: "relative" }}>
-        <div style={{ width: "100%", height: "100%" }}>{ImgSlider()}</div>
+    <div style={{ display: "flex" }}>
+      <div
+        className="B"
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+          display: "block",
+        }}
+      >
+        <div style={{ width: "100%", aspectRatio: "1 / 1" }}>{ImgSlider()}</div>
+      </div>
+      <div
+        className="A"
+        style={{
+          backgroundColor: "lightgrey",
+          width: "50%",
+          aspectRatio: " 1 / 1",
+        }}
+      >
+        <div
+          style={{
+            // backgroundColor: "red",
+            display: "flex",
+            padding: "10px 10px 0 10px",
+          }}
+        >
+          <div>
+            <a
+              href={imageUrls[imageIndex].permalink}
+              target="_blank"
+              style={{ textDecoration: "none", color: "#c4864b" }}
+            >
+              <InstagramIcon />
+            </a>
+          </div>
+          <div style={{ paddingLeft: "10px" }}>
+            <a
+              href={imageUrls[imageIndex].permalink}
+              target="_blank"
+              style={{ textDecoration: "none", color: "#c4864b" }}
+            >
+              {imageUrls[imageIndex].username}
+            </a>
+          </div>
+        </div>
+
+        <div
+          style={{
+            // backgroundColor: "yellow",
+            display: "flex",
+            padding: "10px",
+            fontStyle: "italic",
+            fontSize: "15px",
+          }}
+        >
+          {imageUrls[imageIndex].caption}
+        </div>
       </div>
     </div>
   );

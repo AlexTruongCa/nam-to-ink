@@ -123,7 +123,16 @@ const App = () => {
           photoArray={instagramPhoto}
         />
       )} */}
-      <ImageSlider imageUrls={instagramPhoto} />
+      <div
+        style={{
+          maxWidth: "900px",
+          width: "100%",
+          height: "100%",
+          margin: "0 auto",
+        }}
+      >
+        <ImageSlider imageUrls={instagramPhoto} />
+      </div>
       <Footer />
     </div>
   );
