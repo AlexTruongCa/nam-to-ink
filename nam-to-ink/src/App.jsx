@@ -6,20 +6,21 @@ import Portfolio from "./Components/Portfolio/Portfolio";
 import Contact from "./Components/Contact/Contact";
 import Title from "./Components/Title/Title";
 import Footer from "./Components/Footer/Footer";
-import Modal from "./Components/Modal/Modal";
+// import Modal from "./Components/Modal/Modal";
 import Info from "./Components/Info/Info";
 import Form from "./Components/Form/Form";
 import Photo from "./Components/Photo/Photo";
+import ImageSlider from "./Components/ImageSlider/ImageSlider";
 
 // Fetch images from Instagram
 
 const App = () => {
   const [instagramPhoto, setInstagramPhoto] = useState([]);
-  const [isModal, setIsModal] = useState(false);
-  const [selectedPhotoSrc, setSelectedPhotoSrc] = useState("");
-  const [isCaption, setIsCaption] = useState("");
-  const [isUsername, setIsUsername] = useState("");
-  const [isPermalink, setIsPermalink] = useState("");
+  // const [isModal, setIsModal] = useState(false);
+  // const [selectedPhotoSrc, setSelectedPhotoSrc] = useState("");
+  // const [isCaption, setIsCaption] = useState("");
+  // const [isUsername, setIsUsername] = useState("");
+  // const [isPermalink, setIsPermalink] = useState("");
 
   useEffect(() => {
     // console.log("one");
@@ -61,6 +62,7 @@ const App = () => {
 
     fetchData();
   }, []);
+  // console.log(instagramPhoto);
 
   const renderPhotos = () => {
     return instagramPhoto.map((dataArr, index) => {
@@ -80,13 +82,13 @@ const App = () => {
           className={className}
           src={mediaURL}
           key={dataArr.id}
-          openModal={() => {
-            setIsModal(true);
-            setSelectedPhotoSrc(mediaURL);
-            setIsCaption(mediaCaption);
-            setIsUsername(mediaUsername);
-            setIsPermalink(mediaUserlink);
-          }}
+          // openModal={() => {
+          //   setIsModal(true);
+          //   setSelectedPhotoSrc(mediaURL);
+          //   setIsCaption(mediaCaption);
+          //   setIsUsername(mediaUsername);
+          //   setIsPermalink(mediaUserlink);
+          // }}
         />
       );
     });
@@ -104,7 +106,6 @@ const App = () => {
         <Info />
         <Form />
       </Contact>
-
       {/* <button
         onClick={() => {
           setOpenModal(true);
@@ -112,17 +113,17 @@ const App = () => {
       >
         Open
       </button> */}
-
-      {isModal && (
+      {/* {isModal && (
         <Modal
           openModal={setIsModal}
           src={selectedPhotoSrc}
           caption={isCaption}
           username={isUsername}
           userLink={isPermalink}
+          photoArray={instagramPhoto}
         />
-      )}
-
+      )} */}
+      <ImageSlider imageUrls={instagramPhoto} />
       <Footer />
     </div>
   );

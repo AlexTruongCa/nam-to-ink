@@ -29,18 +29,33 @@
   width: 400px;
 }
 
-.modalWrapper .modalLeft {
+.image-slider {
   /* border: 5px solid purple; */
   max-width: 800px;
   max-height: 800px;
   /* overflow: hidden; */
 }
 
-.modalWrapper .modalLeft > img {
+.image-slider > img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+.img-slider-btn {
+  all: unset;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out;
+}
+
+.img-slider-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .userInfo {
