@@ -6,7 +6,7 @@ import Portfolio from "./Components/Portfolio/Portfolio";
 import Contact from "./Components/Contact/Contact";
 import Title from "./Components/Title/Title";
 import Footer from "./Components/Footer/Footer";
-// import Modal from "./Components/Modal/Modal";
+import Modal from "./Components/Modal/Modal";
 import Info from "./Components/Info/Info";
 import Form from "./Components/Form/Form";
 import Photo from "./Components/Photo/Photo";
@@ -16,11 +16,11 @@ import ImageSlider from "./Components/ImageSlider/ImageSlider";
 
 const App = () => {
   const [instagramPhoto, setInstagramPhoto] = useState([]);
-  // const [isModal, setIsModal] = useState(false);
-  // const [selectedPhotoSrc, setSelectedPhotoSrc] = useState("");
-  // const [isCaption, setIsCaption] = useState("");
-  // const [isUsername, setIsUsername] = useState("");
-  // const [isPermalink, setIsPermalink] = useState("");
+  const [isModal, setIsModal] = useState(false);
+  const [selectedPhotoSrc, setSelectedPhotoSrc] = useState("");
+  const [isCaption, setIsCaption] = useState("");
+  const [isUsername, setIsUsername] = useState("");
+  const [isPermalink, setIsPermalink] = useState("");
 
   useEffect(() => {
     // console.log("one");
@@ -55,6 +55,7 @@ const App = () => {
         //pick the 12 most recent photos
         const dataSlice = filteredPhotos.slice(0, 12);
         setInstagramPhoto(dataSlice);
+        // console.log(dataSlice);
       } catch (error) {
         console.error("Could not fetch error", error);
       }
@@ -82,13 +83,13 @@ const App = () => {
           className={className}
           src={mediaURL}
           key={dataArr.id}
-          // openModal={() => {
-          //   setIsModal(true);
-          //   setSelectedPhotoSrc(mediaURL);
-          //   setIsCaption(mediaCaption);
-          //   setIsUsername(mediaUsername);
-          //   setIsPermalink(mediaUserlink);
-          // }}
+          openModal={() => {
+            setIsModal(true);
+            setSelectedPhotoSrc(mediaURL);
+            setIsCaption(mediaCaption);
+            setIsUsername(mediaUsername);
+            setIsPermalink(mediaUserlink);
+          }}
         />
       );
     });
@@ -113,7 +114,7 @@ const App = () => {
       >
         Open
       </button> */}
-      {/* {isModal && (
+      {isModal && (
         <Modal
           openModal={setIsModal}
           src={selectedPhotoSrc}
@@ -122,7 +123,7 @@ const App = () => {
           userLink={isPermalink}
           photoArray={instagramPhoto}
         />
-      )} */}
+      )}
       <div
         style={{
           maxWidth: "900px",

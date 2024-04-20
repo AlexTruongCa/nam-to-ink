@@ -6,9 +6,8 @@ const Photo = ({ className, src, openModal }) => {
   };
   return (
     <div className={className}>
-      <img id="image" src={src} alt="alt" />
+      <img id="image" src={src} alt="alt" onClick={handleClick} />
     </div>
-    // onClick={handleClick}
   );
 };
 

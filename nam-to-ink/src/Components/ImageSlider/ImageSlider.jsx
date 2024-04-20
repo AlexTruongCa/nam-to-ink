@@ -45,6 +45,11 @@ const ImageSlider = ({ imageUrls }) => {
       </>
     );
   };
+
+  if (!imageUrls || imageUrls.length === 0) {
+    return <div>Loading image...</div>;
+  }
+
   return (
     <div style={{ display: "flex" }}>
       <div
@@ -82,7 +87,7 @@ const ImageSlider = ({ imageUrls }) => {
               <InstagramIcon />
             </a>
           </div>
-          <div style={{ paddingLeft: "10px" }}>
+          <div style={{ paddingLeft: "10px", fontWeight: "bold" }}>
             <a
               href={imageUrls[imageIndex].permalink}
               target="_blank"
@@ -99,7 +104,8 @@ const ImageSlider = ({ imageUrls }) => {
             display: "flex",
             padding: "10px",
             fontStyle: "italic",
-            fontSize: "15px",
+            fontSize: "12px",
+            lineHeight: "20px",
           }}
         >
           {imageUrls[imageIndex].caption}
