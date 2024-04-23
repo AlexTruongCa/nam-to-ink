@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ClearIcon from "@mui/icons-material/Clear";
+import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
+import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import "./Portfolio.css";
 
@@ -27,10 +29,6 @@ const Portfolio = ({ galleryImages }) => {
     if (slideNumber === galleryImages.length - 1) return setSlideNumber(0);
     return setSlideNumber(slideNumber + 1);
   };
-
-  // if (!galleryImages || galleryImages.length === 0) {
-  //   return <div>Loading image...</div>;
-  // }
 
   return (
     <>
@@ -66,9 +64,34 @@ const Portfolio = ({ galleryImages }) => {
                   alt=""
                   className="slider-img"
                 />
-                <div>
+                <div
+                  style={{
+                    position: "absolute",
+                    display: "flex",
+                    gap: "3px",
+                    width: "100%",
+                    justifyContent: "center",
+                    bottom: "10px",
+                  }}
+                >
                   {galleryImages.map((slide, index) => {
-                    return <button>{index}</button>;
+                    return (
+                      <button
+                        className="slider-dot-btn"
+                        key={index}
+                        onClick={() => setSlideNumber(index)}
+                      >
+                        {index === slideNumber ? (
+                          <RadioButtonCheckedIcon
+                            style={{ fontSize: "medium" }}
+                          />
+                        ) : (
+                          <RadioButtonUncheckedIcon
+                            style={{ fontSize: "medium" }}
+                          />
+                        )}
+                      </button>
+                    );
                   })}
                 </div>
               </div>

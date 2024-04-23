@@ -8,8 +8,8 @@ import Title from "./Components/Title/Title";
 import Footer from "./Components/Footer/Footer";
 import Info from "./Components/Info/Info";
 import Form from "./Components/Form/Form";
-import ImageSlider from "./Components/ImageSlider/ImageSlider";
-
+import PortfolioSkeleton from "./Components/Portfolio/PortfolioSkeleton";
+//
 // Fetch images from Instagram
 
 const App = () => {
@@ -63,22 +63,17 @@ const App = () => {
       <Home />
       <About />
       <Title title="MY WORK" />
-      <Portfolio galleryImages={instagramPhoto}></Portfolio>
+      {!instagramPhoto || instagramPhoto.length === 0 ? (
+        <PortfolioSkeleton />
+      ) : (
+        <Portfolio galleryImages={instagramPhoto}></Portfolio>
+      )}
+
       <Title title="CONTACT ME" titleBackground="#f8f0e8" />
       <Contact>
         <Info />
         <Form />
       </Contact>
-      <div
-        style={{
-          maxWidth: "900px",
-          width: "100%",
-          height: "100%",
-          margin: "0 auto",
-        }}
-      >
-        <ImageSlider imageUrls={instagramPhoto} />
-      </div>
       <Footer />
     </div>
   );
