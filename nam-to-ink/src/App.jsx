@@ -9,8 +9,6 @@ import Footer from "./Components/Footer/Footer";
 import Info from "./Components/Info/Info";
 import Form from "./Components/Form/Form";
 import PortfolioSkeleton from "./Components/Portfolio/PortfolioSkeleton";
-//
-// Fetch images from Instagram
 
 const App = () => {
   const [instagramPhoto, setInstagramPhoto] = useState([]);
@@ -68,7 +66,6 @@ const App = () => {
       ) : (
         <Portfolio galleryImages={instagramPhoto}></Portfolio>
       )}
-
       <Title title="CONTACT ME" titleBackground="#f8f0e8" />
       <Contact>
         <Info />

@@ -12,7 +12,7 @@ nav {
 }
 
 .logo {
-  width: 350px;
+  width: 300px;
 }
 
 nav ul li {
@@ -45,4 +45,60 @@ nav ul li .link:hover {
 }
 .dark-nav ul li .link:hover {
   color: #010000;
+}
+
+.menu-btn {
+  all: unset;
+  color: #f8f0e8;
+  display: none;
+}
+
+/* -----media query ----- */
+
+/* reduce menu ul li text size and footer text size */
+/* reduce home heading, text and button sizes */
+/* reduce about text size & contact me texts, and button sizes */
+
+@media (max-width: 1200px) {
+  .logo {
+    width: 250px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .logo {
+    width: 200px;
+  }
+  nav ul li {
+    margin: 0 15px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .menu-btn {
+    display: block;
+    cursor: pointer;
+  }
+  .logo {
+    padding: 35px 0;
+  }
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #cf9e6e;
+    z-index: -1;
+    width: 200px;
+    padding-top: 70px;
+    transition: 250ms ease-in-out;
+  }
+  nav ul li {
+    display: block;
+    margin: 25px 45px;
+  }
+  .hide-menu-btn {
+    right: -200px;
+  }
 }

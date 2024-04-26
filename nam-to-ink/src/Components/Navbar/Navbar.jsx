@@ -3,6 +3,7 @@ import "./Navbar.css";
 import logo from "../../assets/logo_color.png";
 import { BrowserRouter } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
@@ -24,11 +25,16 @@ const Navbar = () => {
     });
   };
 
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const toggleMenu = () => {
+    mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
+  };
+
   return (
     <BrowserRouter>
       <nav className={`container ${sticky ? "dark-nav" : ""}`}>
         <img src={logo} alt="" className="logo" />
-        <ul>
+        <ul className={`${mobileMenu ? "" : "hide-menu-btn"}`}>
           <li>
             <Link className="link" to="/#section-home" smooth>
               HOME
@@ -62,6 +68,9 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
+        <button className="menu-btn" onClick={toggleMenu}>
+          <MenuIcon style={{ fontSize: "40px" }} />
+        </button>
       </nav>
     </BrowserRouter>
   );
