@@ -11,3 +11,25 @@ footer p {
   color: #f8f0e8;
   padding: 15px 20px;
 }
+
+/* -----media query ----- */
+@media (max-width: 1000px) {
+  footer p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 800px) {
+  footer p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 650px) {
+  footer {
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  footer p {
+    color: #f8f0e8;
+    padding: 10px 0 0 0;
+  }
+}

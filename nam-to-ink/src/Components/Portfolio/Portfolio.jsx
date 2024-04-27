@@ -38,12 +38,7 @@ const Portfolio = ({ galleryImages }) => {
             <ClearIcon />
           </div>
           <div className="sliderContainer">
-            <div
-              style={{
-                display: "flex",
-                boxShadow: "0px 0px 25px -8px rgba(0,0,0,0.75)",
-              }}
-            >
+            <div className="wrap">
               <div className="sliderWrap">
                 <button
                   onClick={prevSlide}
@@ -64,16 +59,7 @@ const Portfolio = ({ galleryImages }) => {
                   alt=""
                   className="slider-img"
                 />
-                <div
-                  style={{
-                    position: "absolute",
-                    display: "flex",
-                    gap: "3px",
-                    width: "100%",
-                    justifyContent: "center",
-                    bottom: "10px",
-                  }}
-                >
+                <div className="slider-dot-btn-wrap">
                   {galleryImages.map((slide, index) => {
                     return (
                       <button

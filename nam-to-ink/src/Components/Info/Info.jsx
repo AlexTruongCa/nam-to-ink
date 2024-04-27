@@ -1,4 +1,5 @@
 import React from "react";
+import "./Info.css";
 import location_icon from "../../assets/location_icon.png";
 import phone_icon from "../../assets/phone_icon.png";
 

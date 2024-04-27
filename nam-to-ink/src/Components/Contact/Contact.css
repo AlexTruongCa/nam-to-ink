@@ -8,3 +8,12 @@
   padding: 0 18% 50px 18%;
   gap: 20px;
 }
+
+/* --- media query ---  */
+
+@media (max-width: 900px) {
+  .contact-me {
+    flex-direction: column;
+    padding: 0 12% 50px 12%;
+  }
+}

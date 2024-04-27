@@ -34,7 +34,7 @@ const Navbar = () => {
     <BrowserRouter>
       <nav className={`container ${sticky ? "dark-nav" : ""}`}>
         <img src={logo} alt="" className="logo" />
-        <ul className={`${mobileMenu ? "" : "hide-menu-btn"}`}>
+        <ul className={`${mobileMenu ? "open-menu" : "hide-menu-btn"}`}>
           <li>
             <Link className="link" to="/#section-home" smooth>
               HOME

@@ -53,11 +53,12 @@ nav ul li .link:hover {
   display: none;
 }
 
-/* -----media query ----- */
+.blur-background {
+  filter: blur(6px);
+  transition: filter 300ms ease-in-out;
+}
 
-/* reduce menu ul li text size and footer text size */
-/* reduce home heading, text and button sizes */
-/* reduce about text size & contact me texts, and button sizes */
+/* -----media query ----- */
 
 @media (max-width: 1200px) {
   .logo {
@@ -94,11 +95,20 @@ nav ul li .link:hover {
     padding-top: 70px;
     transition: 250ms ease-in-out;
   }
+  .open-menu {
+    box-shadow: 0 0px 30px 0px rgba(0, 0, 0, 0.5);
+  }
   nav ul li {
     display: block;
     margin: 25px 45px;
   }
   .hide-menu-btn {
     right: -200px;
+  }
+}
+
+@media (max-width: 700px) {
+  .logo {
+    padding: 20px 0;
   }
 }

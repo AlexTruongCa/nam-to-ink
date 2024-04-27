@@ -68,8 +68,8 @@ const App = () => {
       )}
       <Title title="CONTACT ME" titleBackground="#f8f0e8" />
       <Contact>
-        <Info />
         <Form />
+        <Info />
       </Contact>
       <Footer />
     </div>

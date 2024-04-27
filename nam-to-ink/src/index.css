@@ -128,3 +128,60 @@
     padding-right: 8%;
   }
 }
+
+/* --- media query ---  */
+
+@media (max-width: 1000px) {
+  .contact-column h3 {
+    font-size: 16px;
+  }
+  .contact-column ul li {
+    font-size: 15px;
+  }
+  .contact-column ul li img {
+    width: 23px;
+    margin-right: 12px;
+  }
+  .contact-column form label {
+    font-size: 15px;
+  }
+  .btn,
+  .btn-dark {
+    width: 100px;
+    font-size: 13px;
+    padding: 13px 2px;
+  }
+}
+
+@media (max-width: 900px) {
+  .photo-big-1,
+  .photo-big-2 {
+    grid-column: auto;
+    grid-row: auto;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-column h3 {
+    font-size: 15px;
+  }
+  .contact-column ul li {
+    font-size: 14px;
+  }
+  .contact-column form label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 550px) {
+  .contact-column h3 {
+    font-size: 14px;
+  }
+  .contact-column ul li {
+    font-size: 13px;
+  }
+  .contact-column form label {
+    font-size: 13px;
+  }
+}
