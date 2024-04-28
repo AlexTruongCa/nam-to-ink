@@ -220,6 +220,10 @@
 }
 
 @media (max-width: 650px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
   .slider-dot-btn-wrap {
     gap: 5px;
   }

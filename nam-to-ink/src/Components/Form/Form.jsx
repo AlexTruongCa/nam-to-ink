@@ -1,15 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const Form = () => {
-  // const { handleSubmit, setValue } = useForm();
-
-  // const onHCaptchaChange = (token) => {
-  //   setValue("h-captcha-response", token);
-  // };
-
   const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
@@ -39,7 +31,7 @@ const Form = () => {
     <div className="contact-column">
       <h3>To start the booking process, please fill in this form</h3>
       <form onSubmit={onSubmit}>
-        <label>Your Name</label>
+        <label>Your Name *</label>
         <input
           className="your-name"
           type="text"
@@ -47,14 +39,14 @@ const Form = () => {
           placeholder="enter your name"
           required
         />
-        <label>Email Address</label>
+        <label>Email Address *</label>
         <input
           type="email"
           name="email"
           placeholder="enter your e-mail address"
           required
         />
-        <label>Phone Number</label>
+        <label>Phone Number *</label>
         <input
           type="tel"
           name="phone"
@@ -62,21 +54,35 @@ const Form = () => {
           required
         />
         <label>Tattoo Design Description</label>
-        <input type="text" name="name" placeholder="select an option" />
+        <div className="option-field">
+          <select name="Design Description">
+            <option value="0">select an option</option>
+            <option value="Black & White | Smaller than 5cm">
+              Black & White | Smaller than 5cm
+            </option>
+            <option value="Black & White | From 5cm to 10cm">
+              Black & White | From 5cm to 10cm
+            </option>
+            <option value="Black & White | Greater than 10cm">
+              Black & White | Greater than 10cm
+            </option>
+            <option value="Color - Small">Color - Small</option>
+            <option value="Color | Medium - 5cm to 10cm">
+              Color | Medium - 5cm to 10cm
+            </option>
+            <option value="Color | Greater than 10cm">
+              Color | Greater than 10cm
+            </option>
+          </select>
+        </div>
         <label>Placement</label>
-        <input type="text" name="name" placeholder="select an option" />
+
         <label>Leave me a message</label>
         <textarea
           name="message"
           rows="10"
-          placeholder="give me more details of your idea"
+          placeholder="give us more details of your idea i.e. where is the tattoo placement? Do you have your artwork ready or you need us to create a new one? etc."
         ></textarea>
-        {/* <input type="file" />
-        <br /> */}
-        {/* <HCaptcha
-          sitekey="10000000-ffff-ffff-ffff-000000000001" //this site key is for testing only. Use this key on prod 50b2fe65-b00b-4b9e-ad62-3ba471098be2
-          onVerify={onHCaptchaChange}
-        /> */}
         <button className="btn-dark" type="submit" style={{ marginBottom: 15 }}>
           SUBMIT
         </button>
