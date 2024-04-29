@@ -75,8 +75,6 @@ const Form = () => {
             </option>
           </select>
         </div>
-        <label>Placement</label>
-
         <label>Leave me a message</label>
         <textarea
           name="message"
