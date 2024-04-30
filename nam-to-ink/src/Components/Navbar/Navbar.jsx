@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo_color.png";
-import { BrowserRouter } from "react-router-dom";
-import { HashLink as Link } from "react-router-hash-link";
+import { BrowserRouter, Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTranslation } from "react-i18next";
+import ScrollToAnchor from "./ScrollToAnchor";
 
 const languages = [
   { code: "vn", lang: "VN" },
@@ -26,17 +26,6 @@ const Navbar = () => {
     });
   }, []);
 
-  const scrollWithOffSet = (a) => {
-    const yCordinate = a.getBoundingClientRect().top + scrollY;
-    //getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
-    //scrollY property returns the pixels a document has scrolled from the upper left corner of the window.
-    const yOffset = -200;
-    window.scrollTo({
-      top: yCordinate + yOffset,
-      behavior: "smooth",
-    });
-  };
-
   const [mobileMenu, setMobileMenu] = useState(false);
   const toggleMenu = () => {
     mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
@@ -44,38 +33,28 @@ const Navbar = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToAnchor offset={-200} />
+      {/* ScrollToAnchor listens for location changes and determines if there is a hash (or element ID) that this app should scroll to */}
       <nav className={`container ${sticky ? "dark-nav" : ""}`}>
         <img src={logo} alt="" className="logo" />
         <ul className={`${mobileMenu ? "open-menu" : "hide-menu-btn"}`}>
           <li>
-            <Link className="link" to="/#section-home" smooth>
+            <Link className="link" to="/#section-home" smooth="true">
               {t("navHome")}
             </Link>
           </li>
           <li>
-            <Link
-              className="link"
-              to="/#section-about"
-              scroll={scrollWithOffSet}
-            >
+            <Link className="link" to="/#section-about" smooth="true">
               {t("navAbout")}
             </Link>
           </li>
           <li>
-            <Link
-              className="link"
-              to="/#section-portfolio"
-              scroll={scrollWithOffSet}
-            >
+            <Link className="link" to="/#section-portfolio" smooth="true">
               {t("navWork")}
             </Link>
           </li>
           <li>
-            <Link
-              className="link"
-              to="/#section-contact"
-              scroll={scrollWithOffSet}
-            >
+            <Link className="link" to="/#section-contact" smooth="true">
               {t("navContact")}
             </Link>
           </li>
