@@ -9,9 +9,12 @@ import Footer from "./Components/Footer/Footer";
 import Info from "./Components/Info/Info";
 import Form from "./Components/Form/Form";
 import PortfolioSkeleton from "./Components/Portfolio/PortfolioSkeleton";
+import LanguageSelector from "./Components/LanguageSelector/LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
   const [instagramPhoto, setInstagramPhoto] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // console.log("one");
@@ -59,14 +62,15 @@ const App = () => {
     <div>
       <Navbar />
       <Home />
+      <LanguageSelector />
       <About />
-      <Title title="MY WORK" />
+      <Title title={t("workTitle")} />
       {!instagramPhoto || instagramPhoto.length === 0 ? (
         <PortfolioSkeleton />
       ) : (
         <Portfolio galleryImages={instagramPhoto}></Portfolio>
       )}
-      <Title title="CONTACT ME" titleBackground="#f8f0e8" />
+      <Title title={t("contactTitle")} titleBackground="#f8f0e8" />
       <Contact>
         <Form />
         <Info />

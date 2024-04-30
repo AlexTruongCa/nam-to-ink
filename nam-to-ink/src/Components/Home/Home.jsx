@@ -1,18 +1,18 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-scroll";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <div className="home" id="section-home">
       <div className="home-text">
-        <h1>
-          WE TRANSFORM YOUR TATTOO INTO MEMORIES THAT SPEAK LOUDER THAN WORDS
-        </h1>
-        <p>Empowering self-expression through the language of art</p>
+        <h1>{t("homeSlogan")}</h1>
+        <p>{t("homeText")}</p>
         <button className="btn">
           <Link to="contact-me" smooth={true} offset={0} duration={500}>
-            BOOK NOW
+            {t("homeBtn")}
           </Link>
         </button>
       </div>

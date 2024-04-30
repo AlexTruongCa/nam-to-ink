@@ -4,9 +4,11 @@ import logo from "../../assets/logo_color.png";
 import { BrowserRouter } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -37,7 +39,7 @@ const Navbar = () => {
         <ul className={`${mobileMenu ? "open-menu" : "hide-menu-btn"}`}>
           <li>
             <Link className="link" to="/#section-home" smooth>
-              HOME
+              {t("navHome")}
             </Link>
           </li>
           <li>
@@ -46,7 +48,7 @@ const Navbar = () => {
               to="/#section-about"
               scroll={scrollWithOffSet}
             >
-              ABOUT ME
+              {t("navAbout")}
             </Link>
           </li>
           <li>
@@ -55,7 +57,7 @@ const Navbar = () => {
               to="/#section-portfolio"
               scroll={scrollWithOffSet}
             >
-              MY WORK
+              {t("navWork")}
             </Link>
           </li>
           <li>
@@ -64,7 +66,7 @@ const Navbar = () => {
               to="/#section-contact"
               scroll={scrollWithOffSet}
             >
-              CONTACT
+              {t("navContact")}
             </Link>
           </li>
         </ul>

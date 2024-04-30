@@ -1,0 +1,29 @@
+.lng-btn-container {
+  /* background-color: aqua; */
+  /* width: 150px; */
+  /* border: 2px solid red; */
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  all: unset;
+  border: 1px solid transparent;
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* button:hover {
+  border: 1px solid red;
+} */
+
+/* button:focus,
+button:focus-visible {
+  outline: 4px auto;
+} */
+
+button.selected {
+  background-color: lightcoral;
+}

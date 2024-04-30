@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Form = () => {
   const [result, setResult] = useState("");
+  const { t } = useTranslation();
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -29,60 +31,62 @@ const Form = () => {
 
   return (
     <div className="contact-column">
-      <h3>To start the booking process, please fill in this form</h3>
+      <h3>{t("contactSubtitle1")}</h3>
       <form onSubmit={onSubmit}>
-        <label>Your Name *</label>
+        <label>{t("formName")}</label>
         <input
           className="your-name"
           type="text"
           name="name"
-          placeholder="enter your name"
+          placeholder={t("formNamePH")}
           required
         />
-        <label>Email Address *</label>
+        <label>{t("formEmail")}</label>
         <input
           type="email"
           name="email"
-          placeholder="enter your e-mail address"
+          placeholder={t("formEmailPH")}
           required
         />
-        <label>Phone Number *</label>
+        <label>{t("formPhone")}</label>
         <input
           type="tel"
           name="phone"
-          placeholder="enter your mobile phone number"
+          placeholder={t("formPhonePH")}
           required
         />
-        <label>Tattoo Design Description</label>
+        <label>{t("formDesignDesc")}</label>
         <div className="option-field">
           <select name="Design Description">
-            <option value="0">select an option</option>
-            <option value="Black & White | Smaller than 5cm">
-              Black & White | Smaller than 5cm
+            <option value="-">{t("formDesignOption1")}</option>
+            <option value={t("formDesignOption2")}>
+              {t("formDesignOption2")}
             </option>
-            <option value="Black & White | From 5cm to 10cm">
-              Black & White | From 5cm to 10cm
+            <option value={t("formDesignOption3")}>
+              {t("formDesignOption3")}
             </option>
-            <option value="Black & White | Greater than 10cm">
-              Black & White | Greater than 10cm
+            <option value={t("formDesignOption4")}>
+              {t("formDesignOption4")}
             </option>
-            <option value="Color - Small">Color - Small</option>
-            <option value="Color | Medium - 5cm to 10cm">
-              Color | Medium - 5cm to 10cm
+            <option value={t("formDesignOption5")}>
+              {t("formDesignOption5")}
             </option>
-            <option value="Color | Greater than 10cm">
-              Color | Greater than 10cm
+            <option value={t("formDesignOption6")}>
+              {t("formDesignOption6")}
+            </option>
+            <option value={t("formDesignOption7")}>
+              {t("formDesignOption7")}
             </option>
           </select>
         </div>
-        <label>Leave me a message</label>
+        <label>{t("formMessage")}</label>
         <textarea
           name="message"
           rows="10"
-          placeholder="give us more details of your idea i.e. where is the tattoo placement? Do you have your artwork ready or you need us to create a new one? etc."
+          placeholder={t("formMessagePH")}
         ></textarea>
         <button className="btn-dark" type="submit" style={{ marginBottom: 15 }}>
-          SUBMIT
+          {t("formBtn")}
         </button>
       </form>
       <label style={{ fontStyle: "italic" }}>{result}</label>
