@@ -6,9 +6,19 @@ import { HashLink as Link } from "react-router-hash-link";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTranslation } from "react-i18next";
 
+const languages = [
+  { code: "vn", lang: "VN" },
+  { code: "en", lang: "EN" },
+];
+
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
   const { t } = useTranslation();
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -70,6 +80,19 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
+        <div className="lng-btn-container">
+          {languages.map((lng) => {
+            return (
+              <button
+                className={lng.code === i18n.language ? "selected" : ""}
+                key={lng.code}
+                onClick={() => changeLanguage(lng.code)}
+              >
+                {lng.lang}
+              </button>
+            );
+          })}
+        </div>
         <button className="menu-btn" onClick={toggleMenu}>
           <MenuIcon style={{ fontSize: "40px" }} />
         </button>

@@ -36,12 +36,12 @@ nav ul li .link:hover {
 
 .dark-nav {
   background: #cf9e6e;
-  /* transition: 0.2s ease-in-out; */
+  transition: 200ms ease-in-out;
   box-shadow: 0 1px 5px 0.5px rgba(0, 0, 0, 0.2);
 }
 
 .dark-nav ul li .link {
-  transition: 0.2s ease-in-out;
+  transition: 200ms ease-in-out;
 }
 .dark-nav ul li .link:hover {
   color: #010000;
@@ -58,6 +58,31 @@ nav ul li .link:hover {
   transition: filter 300ms ease-in-out;
 }
 
+.lng-btn-container {
+  display: flex;
+  gap: 5px;
+}
+
+.lng-btn-container button {
+  all: unset;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  opacity: 0.5;
+  transition: scale 200ms ease-in-out;
+}
+
+.lng-btn-container button:hover {
+  color: white;
+  scale: 1.2;
+}
+
+.lng-btn-container button.selected {
+  opacity: 1;
+}
+
 /* -----media query ----- */
 
 @media (max-width: 1200px) {
@@ -72,6 +97,9 @@ nav ul li .link:hover {
   }
   nav ul li {
     margin: 0 15px;
+    font-size: 18px;
+  }
+  .lng-btn-container button {
     font-size: 18px;
   }
 }

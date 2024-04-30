@@ -72,6 +72,10 @@
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.contact-column form textarea {
+  resize: none;
+}
+
 /* CSS Portfolio Nested components  */
 
 .photo {
@@ -132,8 +136,6 @@
     padding-right: 8%;
   }
 }
-
-/* --- media query ---  */
 
 @media (max-width: 1000px) {
   .contact-column h3 {

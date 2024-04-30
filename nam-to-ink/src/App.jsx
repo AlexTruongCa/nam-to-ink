@@ -9,7 +9,6 @@ import Footer from "./Components/Footer/Footer";
 import Info from "./Components/Info/Info";
 import Form from "./Components/Form/Form";
 import PortfolioSkeleton from "./Components/Portfolio/PortfolioSkeleton";
-import LanguageSelector from "./Components/LanguageSelector/LanguageSelector";
 import { useTranslation } from "react-i18next";
 
 const App = () => {
@@ -62,7 +61,6 @@ const App = () => {
     <div>
       <Navbar />
       <Home />
-      <LanguageSelector />
       <About />
       <Title title={t("workTitle")} />
       {!instagramPhoto || instagramPhoto.length === 0 ? (
