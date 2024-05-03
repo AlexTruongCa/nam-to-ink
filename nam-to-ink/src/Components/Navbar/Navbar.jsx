@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo_color.png";
 import { BrowserRouter, Link } from "react-router-dom";
@@ -15,6 +15,7 @@ const Navbar = () => {
   const [sticky, setSticky] = useState(false);
   const { t } = useTranslation();
   const { i18n } = useTranslation();
+  const menuRef = useRef(null);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -24,6 +25,16 @@ const Navbar = () => {
     window.addEventListener("scroll", () => {
       window.scrollY > 200 ? setSticky(true) : setSticky(false);
     });
+    const menuClickAway = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setMobileMenu(false);
+        // console.log(modalRef.current);
+      }
+    };
+    document.addEventListener("mousedown", menuClickAway);
+    return () => {
+      document.removeEventListener("mousedown", menuClickAway);
+    };
   }, []);
 
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -35,7 +46,7 @@ const Navbar = () => {
     <BrowserRouter>
       <ScrollToAnchor offset={-200} />
       {/* ScrollToAnchor listens for location changes and determines if there is a hash (or element ID) that this app should scroll to */}
-      <nav className={`container ${sticky ? "dark-nav" : ""}`}>
+      <nav className={`container ${sticky ? "dark-nav" : ""}`} ref={menuRef}>
         <img src={logo} alt="" className="logo" />
         <ul className={`${mobileMenu ? "open-menu" : "hide-menu-btn"}`}>
           <li>
