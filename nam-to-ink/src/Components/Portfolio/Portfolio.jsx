@@ -36,8 +36,8 @@ const Portfolio = ({ galleryImages }) => {
         <div className="clearIcon" onClick={handleClose}>
           <ClearIcon />
         </div>
-        <div className="sliderContainer" ref={modalRef}>
-          <div className="wrap">
+        <div className="sliderContainer">
+          <div className="wrap" ref={modalRef}>
             <div className="sliderWrap">
               <button
                 onClick={prevSlide}
