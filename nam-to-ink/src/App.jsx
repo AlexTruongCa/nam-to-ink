@@ -14,12 +14,13 @@ import { useTranslation } from "react-i18next";
 const App = () => {
   const [instagramPhoto, setInstagramPhoto] = useState([]);
   const { t } = useTranslation();
+  const netlifyURL = "https://main--13inktattooserver.netlify.app/";
 
   useEffect(() => {
     // console.log("one");
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/`, {
+        const response = await fetch(netlifyURL, {
           method: "GET",
         });
         console.log("---response---", response);
