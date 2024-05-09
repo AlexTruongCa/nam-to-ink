@@ -35,14 +35,20 @@ const App = () => {
           return new Date(b.timestamp) - new Date(a.timestamp);
         });
 
-        const keyWord = "#testAPi";
+        const keyWord = "#13ink";
         const filteredPhotos = [];
 
         for (let i = 0; i < dataSort.length; i++) {
           const mediaType = dataSort[i].media_type;
           const caption = dataSort[i].caption;
-          if (mediaType !== "VIDEO" && caption.indexOf(keyWord) === -1) {
-            filteredPhotos.push(dataSort[i]);
+          if (mediaType !== "VIDEO") {
+            if (caption !== undefined) {
+              if (caption.indexOf(keyWord) === -1) {
+                filteredPhotos.push(dataSort[i]);
+              }
+            } else {
+              filteredPhotos.push(dataSort[i]);
+            }
           }
         }
 
