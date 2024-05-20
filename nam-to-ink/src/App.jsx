@@ -17,15 +17,17 @@ const App = () => {
   const netlifyURL = "https://main--13inktattooserver.netlify.app/";
 
   useEffect(() => {
-    // console.log("one");
     const fetchData = async () => {
       try {
         const response = await fetch(netlifyURL, {
           method: "GET",
+          headers: {
+            token: import.meta.env.VITE_CLIENT_TOKEN,
+          },
         });
         console.log("---response---", response);
         if (!response.ok) {
-          throw new Error("Could not fetch resources");
+          throw new Error("---Could not fetch resources---");
         }
         const dataObj = await response.json();
         const dataArr = dataObj.data;
@@ -57,7 +59,7 @@ const App = () => {
         setInstagramPhoto(dataSlice);
         // console.log(dataSlice);
       } catch (error) {
-        console.error("Could not fetch error", error);
+        console.error("---Could not fetch error---", error);
       }
     };
 

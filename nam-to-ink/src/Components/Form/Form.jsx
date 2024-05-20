@@ -88,6 +88,12 @@ const Form = () => {
         <button className="btn-dark" type="submit" style={{ marginBottom: 15 }}>
           {t("formBtn")}
         </button>
+        <input
+          type="checkbox"
+          name="botcheck"
+          className="hidden"
+          style={{ display: "none" }}
+        />
       </form>
       <label style={{ fontStyle: "italic" }}>{result}</label>
     </div>
