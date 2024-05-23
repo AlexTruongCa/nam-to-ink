@@ -29,7 +29,7 @@
   background: #f8f0e8;
 }
 
-.btn > * {
+.btn > a {
   color: inherit;
   text-decoration: none;
 }
@@ -39,7 +39,7 @@
   color: #f8f0e8;
 }
 
-.btn:hover > * {
+.btn:hover > a {
   color: inherit;
   text-decoration: none;
 }
