@@ -22,7 +22,7 @@ const Info = () => {
       </ul>
       <iframe
         title="google map"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1648.0050417627795!2d106.69040655088357!3d10.762307846996272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1712797126329!5m2!1sen!2sca"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6351066231628!2d106.68735537583838!3d10.762579759447373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f17337267eb%3A0xdd5fe48319a84ad3!2zxJAuIENhbyBCw6EgTmjhuqEsIE5ndXnhu4VuIEPGsCBUcmluaCwgUXXhuq1uIDEsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2sca!4v1716429130498!5m2!1sen!2sca"
         width="100%"
         height="450"
         style={{ border: 0 }}

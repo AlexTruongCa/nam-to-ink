@@ -28,9 +28,18 @@
 .btn {
   background: #f8f0e8;
 }
+
+.btn > * {
+  text-decoration: none;
+}
+
 .btn:hover {
   background: #c4864b;
   color: #f8f0e8;
+}
+
+.btn:hover > * {
+  text-decoration: none;
 }
 
 .btn-dark {
