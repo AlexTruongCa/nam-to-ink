@@ -11,7 +11,7 @@ const Form = () => {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", import.meta.env.WEB3FORMS_KEY);
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -27,6 +27,7 @@ const Form = () => {
       console.log("Error", responseData);
       setResult("Unable to submit form. Please contact us at 089-661-3869");
     }
+    // console.log(import.meta.env.VITE_WEB3FORMS_KEY);
   };
 
   return (
