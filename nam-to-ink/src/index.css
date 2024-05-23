@@ -84,6 +84,11 @@
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.contact-column form select {
+  color: #8e8e8e;
+  text-decoration: none;
+}
+
 .contact-column form textarea {
   resize: none;
 }
