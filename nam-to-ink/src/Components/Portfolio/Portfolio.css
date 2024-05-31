@@ -260,7 +260,7 @@
   }
 }
 
-/* @media (max-height: 375px) {
+@media (max-height: 375px) {
   .wrap {
     flex-direction: row;
   }
@@ -277,4 +277,4 @@
   .sliderContainer {
     transform: translateX(-2.5%);
   }
-} */
+}
